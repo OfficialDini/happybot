@@ -7,6 +7,20 @@ from discord.ext import commands
 from discord.utils import find
 from discord.ext import tasks
 from itertools import cycle
+from google.cloud import secretmanager
+
+# Create the Secret Manager client.
+client = secretmanager.SecretManagerServiceClient()
+project_id = os.getenv("743097597361")
+secret_id = "TOKEN"
+
+# Access the secret version.
+name = f"projects/743097597361/secrets/TOKEN"
+response = client.access_secret_version(request={"name": name})
+
+# Your secret data is in response.payload.data.
+my_secret = response.payload.data.decode('UTF-8')
+
 
 intents = discord.Intents.default()
 intents.messages = True
@@ -97,4 +111,4 @@ async def on_message(message):
         await message.channel.send('My commands are: $inspire -- Get inspired by a cool quote!. Saying any of the words on $list (such as sad) -- cheer up!. $list -- all the words that trigger the cheer up command. $hello -- Greetings!. $help -- Being used at this very moment :) Tells you all of the commands available. That is it for now, but more cool commands are yet to come!')
 
 change_status()
-client.run(os.getenv('TOKEN'))
+client.run(os.getenv('secret_id'))
