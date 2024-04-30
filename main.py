@@ -46,8 +46,7 @@ starter_encouragements = [
     "Go get some hot cocoa. Bet it will cheer you up."
 ]
 
-if "responding" not in db.keys():
-    db["responding"] = True
+
 
 def get_quote():
     response = requests.get("https://zenquotes.io/api/random")
