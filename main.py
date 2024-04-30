@@ -3,8 +3,6 @@ import discord
 import requests
 import json
 import random
-from replit import db
-from keep_alive import keep_alive
 from discord.ext import commands
 from discord.utils import find
 from discord.ext import tasks
@@ -98,6 +96,5 @@ async def on_message(message):
     if message.content.startswith('$help'):
         await message.channel.send('My commands are: $inspire -- Get inspired by a cool quote!. Saying any of the words on $list (such as sad) -- cheer up!. $list -- all the words that trigger the cheer up command. $hello -- Greetings!. $help -- Being used at this very moment :) Tells you all of the commands available. That is it for now, but more cool commands are yet to come!')
 
-keep_alive()
 change_status()
 client.run(os.getenv('TOKEN'))
