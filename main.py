@@ -3,6 +3,7 @@ import discord
 import requests
 import json
 import random
+import replit
 from replit import db
 from discord.ext import commands
 from discord.utils import find
