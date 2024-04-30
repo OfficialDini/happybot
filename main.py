@@ -113,4 +113,4 @@ async def on_message(message):
         await message.channel.send('My commands are: $inspire -- Get inspired by a cool quote!. Saying any of the words on $list (such as sad) -- cheer up!. $list -- all the words that trigger the cheer up command. $hello -- Greetings!. $help -- Being used at this very moment :) Tells you all of the commands available. That is it for now, but more cool commands are yet to come!')
 
 change_status()
-client.run(os.getenv('secret_id'))
+client.run(os.getenv('TOKEN'))
