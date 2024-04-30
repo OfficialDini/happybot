@@ -9,6 +9,7 @@ from discord.ext import commands
 from discord.utils import find
 from discord.ext import tasks
 from itertools import cycle
+import google.cloud
 from google.cloud import secretmanager
 
 # Function to retrieve secrets
